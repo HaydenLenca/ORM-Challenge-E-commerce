@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
     const productData = await Product.findAll({
       include: [{ model: Category }, { model: Tag } ],
     });
+
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
@@ -26,11 +27,11 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Category }, { model: Tag } ],
     });
 
-    // If the Product ID is not present in the DB
     if (!productData) {
       res.status(404).json({ message: 'There is no Product with that ID'});
       return;
     }
+
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
@@ -117,11 +118,12 @@ router.delete('/:id', async (req, res) => {
     const productData = await Product.destroy({
       where: { id: req.params.id }
     });
-    // If the Product ID is not present in the DB
+    
     if (!productData) {
       res.status(404).json({ message: 'There is no Product with that ID'});
       return;
     }
+    
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
