@@ -32,7 +32,7 @@
   ### Links
   [Github](https://github.com/HaydenLenca/ORM-Challenge-E-commerce) 
   
-  [Walkthrough Recording]()
+  [Walkthrough Recording](https://drive.google.com/file/d/1Y0fFOKoPymjKCxbllARJ4MZZzihZMJaA/view)
 
 
   ### License 
